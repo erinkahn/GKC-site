@@ -827,8 +827,47 @@ a.active {
 }
 
 
+/* VOLUNTEER PAGE FORM ---------------------------------------------------*/
+
+/* volunteer form container wrapper */
+.volunteer-content-wrapper div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 320px;
+    margin: auto;
+}
+
+/* form input boxes */
+.volunteer-content-wrapper div input{
+    font-size: 1em;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+/* submit button */
+.volunteer-content-wrapper div.submit-btn{
+    padding: 10px;
+    border: 3px solid #666965;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* hover submit button bkg color*/
+.volunteer-content-wrapper div.submit-btn:hover{
+    background-color: #8dc440;
+}
+
+/* hover submit button text color */
+.volunteer-content-wrapper div.submit-btn a:hover{
+    color: #fff;
+}
+
+/* when the screen is a tablet or mobile use this form layout */
+@media screen and (max-width: 768px) {
 
 
+}
 
 
 
