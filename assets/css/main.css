@@ -356,7 +356,8 @@ a.active {
 
 /* when the screen is bigger than tablet use this logo */
 @media screen and (min-width: 769px) {
-    .logo-desktop{
+    .logo-desktop, .about-desktop, .mission-desktop, .volunteer-desktop,
+    .serve-desktop, .donate-desktop, .contact-desktop{
         justify-content: center;
         display: flex;
         max-width: 30px auto;
@@ -367,7 +368,8 @@ a.active {
         z-index: 2;
     }
 
-    .logo-mobile{
+    .logo-mobile, .g-mobile, .about-mobile, .mission-mobile, .volunteer-mobile,
+    .serve-mobile, .donate-mobile, .contact-mobile{
         display: none;
     }
 
@@ -380,11 +382,13 @@ a.active {
 /* when the screen is a tablet or mobile hide this logo */
 @media screen and (max-width: 768px) {
 
-    .logo-desktop{
+    .logo-desktop, .about-desktop, .mission-desktop, .volunteer-desktop,
+    .serve-desktop, .donate-desktop, .contact-desktop{
         display: none;
     }
 
-    .logo-mobile{
+    .logo-mobile, .about-mobile, .mission-mobile, .volunteer-mobile,
+    .serve-mobile, .donate-mobile, .contact-mobile{
         justify-content: center;
         display: flex;
         max-width: 30px auto;
@@ -497,6 +501,7 @@ a.active {
 /* help icon */
 .tabs li:nth-child(5){
     background-image: url('../img/seek-help.png');
+    border-right: none;
 }
 
 
@@ -583,7 +588,7 @@ a.active {
     width: 89px;
 }
 
-/* donate input text color */
+/* input donate text color */
 #tab1 input{
     font-size: 0.8em;
     color: #fff;
@@ -598,10 +603,19 @@ a.active {
     width: 300px;
 }
 
- /* subscribe input text color */
-#tab4 input{
+ /* subscribe and volunteer input text color */
+#tab4 input, #tab2 input{
     font-size: 1em;
     color: #fff;
+}
+
+/* input volunteer  */
+#tab2 input[type=text] {
+    margin-top: 9px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    width: 300px;
 }
 
 /* when mobile, stack tabs up and down, hide left to right*/
@@ -665,12 +679,13 @@ a.active {
 
     /* input subscribe email newsletter*/
     #tab4 input[type=text],
-    #tab1 input[type=text] {
+    #tab1 input[type=text],
+    #tab2 input[type=text] {
         border-bottom: 3px solid #666965;
     }
 
     /* input text color */
-    #tab4 input, #tab1 input{
+    #tab4 input, #tab1 input, #tab2 input{
         color: #666965;
     }
 
@@ -755,7 +770,71 @@ a.active {
 }
 
 
-/* --------------------------------------------------------*/
+/* ABOUT AND MISSION PAGES CONTENT SECTION----------------------------------------------*/
+
+/* content wrappers */
+.about-content-wrapper, .mission-content-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 50px 100px;
+}
+
+/* h1 */
+.about-content-wrapper h1, .mission-content-wrapper h1{
+    font-size: 1.3em;
+    line-height: 25px;
+    margin-bottom: 10px;
+}
+
+/* h2 */
+.mission-content-wrapper h2{
+    font-weight: bold;
+    text-decoration: underline;
+    padding-bottom: 5px;
+    line-height: 20px;
+}
+
+/* about img */
+.about-content-wrapper img{
+    width: 100%;
+}
+
+/* center circle graphic */
+.mission-content-wrapper div:nth-child(4){
+    margin: 20px auto;
+}
+
+/* content divs */
+.about-content-wrapper div:nth-child(2),
+.mission-content-wrapper div:nth-child(2),
+.mission-content-wrapper div:nth-child(3){
+    margin-top: 20px;
+}
+
+/* paragraphs */
+.about-content-wrapper p, .mission-content-wrapper p{
+    line-height: 20px;
+    padding-bottom: 10px;
+}
+
+/* when the screen is a tablet or mobile use this margin */
+@media screen and (max-width: 768px) {
+    /* mobile content wrapper */
+    .about-content-wrapper, .mission-content-wrapper{
+         margin: 30px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
