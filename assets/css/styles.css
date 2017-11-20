@@ -1,0 +1,323 @@
+
+* {
+    box-sizing: border-box;
+    
+}
+
+body {
+    background: #fff;
+    font-family: 'Nunito', sans-serif;
+}
+
+/* THIS IS THE DESKTOP MENU ---------------------------------------*/
+
+
+/* when the screen is bigger than tablet, hide the burger */
+@media screen and (min-width: 769px) {
+	#menu-container, #donate-button-mobile{
+		display: none; 
+	}
+
+	nav .desktop-menu{
+		margin: 17px;
+	}
+}
+
+/* desktop nav */
+nav{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+}
+
+/* desktop nav */
+nav .desktop-menu{
+	display: flex;
+	list-style: none;
+	flex-direction: row;
+	text-transform: uppercase;
+}
+
+/* desktop nav items*/
+.desktop-menu li{
+	padding: 0 40px;
+}
+
+/* desktop nav items hover*/
+.desktop-menu li a:hover{
+	border-bottom: 2px solid #8dc440;
+}
+
+.dropmenu{
+	position: relative;
+	display: inline-block;
+}
+
+/* submenu items hide when NOT on hover */
+.dropdown-content{
+	display: none;
+	min-width: 90px;
+	position: absolute;
+    z-index: 1;
+}
+
+/* submenu items SHOW when ON HOVER */
+.drop-menu:hover .dropdown-content {
+    display: flex;
+	flex-direction: column;
+	margin: 20px 0 0 39px;
+	font-size: 12px;
+}
+
+/* space between submenu items */
+.dropdown-content a{
+	padding-bottom: 12px;
+}
+
+/* hover over subitems*/
+.dropdown-content a:hover{
+	color: #8dc440;
+}
+
+/* keep height of donate button same on desktop*/
+.donate-button-desktop {
+	margin-bottom: 92px;
+}
+
+
+
+/* THIS IS ALL THE HAMBURGER MENU --------------------------------*/
+
+
+/* when the screen is a tablet or mobile, hide the menu items */
+@media screen and (max-width: 768px) {
+	nav, .donate-button-desktop{
+      display: none; 
+	}
+}
+
+ul { 
+	list-style: none; 
+}
+
+a { 
+	text-decoration: none; 
+	color: #666965;
+}
+
+/* when a is active make menu item white */
+a.active {
+	color: #fff;
+}
+
+
+/* burger and donate container */
+.top-fixed-container{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between; /* OMG THIS MADE donate now go to the right */
+}
+
+/* donate button div */
+#donate-button-mobile,
+.donate-button-desktop {
+	background-color: #8dc440;
+	padding: 0 19px;
+}
+
+/* donate text */
+#donate-button-mobile a,
+.donate-button-desktop a{
+	color: #fff;
+	padding: 5px;
+	text-transform: uppercase;
+}
+
+/* donate button hover */
+#donate-button-mobile:hover,
+.donate-button-desktop:hover{
+	background-color: #666965;
+	padding: 0 19px;
+	transition-duration: .6s;
+	transition-timing-function: ease;
+}
+
+/* burger menu wrapper */
+#menu-wrapper {
+    overflow: hidden;
+    max-width: 100%;
+    cursor: pointer;
+}
+
+/* hamburger position */
+#hamburger-menu {
+    position: relative;
+    width: 25px;
+    height: 20px;
+    margin: 15px;
+}
+
+/* hamburger spans animation */
+#hamburger-menu span {
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    border-radius: 10px;
+    color: #666965;
+    background-color: #666965;
+    position: absolute;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .4s ease-in-out;
+    transition: .4s ease-in-out;
+}
+
+/* first span burger position*/
+#hamburger-menu span:nth-child(1) {
+    top: 0;
+}
+
+/* 2nd span burger position*/
+#hamburger-menu span:nth-child(2) {
+    top: 9px;
+}
+
+/* 3nd span burger position*/
+#hamburger-menu span:nth-child(3) {
+    top: 18px;
+}
+
+/* 1st span burger animation rotate */
+#hamburger-menu.open span:nth-child(1) {
+    top: 9px;
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+
+/* 2nd span burger animation hide */
+#hamburger-menu.open span:nth-child(2) {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    left: -60px;
+}
+
+/* 3rd span burger animation rotate */
+#hamburger-menu.open span:nth-child(3) {
+    top: 9px;
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+
+/* submenu position */
+.menu-list .menu-submenu {
+    padding-left: 20px;
+    margin: 20px 0;
+    line-height: 40px;
+}
+
+/* underline submenu items on hover */
+.menu-list .menu-submenu li a:hover{
+	border-bottom: 2px solid #8dc440;
+}
+
+/* main menu ul*/
+.menu-list {
+    padding-left: 0;
+    display: block;
+    position: absolute;
+    width: 100%;
+    max-width: 270px;
+    background: white;
+    box-shadow: rgba(100,100,100,0.3) 6px 4px 10px;
+    z-index: 999;
+    overflow-y: auto;
+    overflow-x: hidden;
+    left: -100%;
+}
+
+/* main menu li items*/
+.menu-list li.accordion-toggle {
+    font-size: 16px;
+    padding: 20px;
+    text-transform: uppercase;
+    border-top: 1px solid #dbdcd2;
+}
+
+/* hides top border of menu*/
+.menu-list li:first-of-type {
+    border-top: 0;
+}
+
+/* menu and submenu*/
+.accordion-toggle, 
+.accordion-content {
+    cursor: pointer;
+    font-size: 16px;
+    position: relative;
+    letter-spacing: 1px;
+}
+
+/* hides submenus under main menu */
+.accordion-content {
+    display: none;
+}
+
+/* plus+ signs animation, color */
+.accordion-toggle a:before, 
+.accordion-toggle a:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    width: 15px;
+    height: 2px;
+    margin-top: -1px;
+    background-color: #8dc440; /* green + */
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s ease-out;
+}
+
+/* plus+ signs before rotate */
+.accordion-toggle a:before {
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 1;
+    z-index: 2;
+}
+
+/* active menu bar - green */
+.accordion-toggle.active-tab {
+  background: #8dc440;
+  transition: all 0.3s ease;
+}
+
+/* active menu link before click */
+.accordion-toggle a.active:before {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    background: #fff !important;
+}
+
+/* active menu link after click */
+.accordion-toggle a.active:after {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+    background: #fff !important;
+    opacity: 0;
+}
+
+
+/* --------------------------------------------------------------*/
+
+

@@ -3,26 +3,266 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<title></title>
+		<title>Grace Klein Community</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon.png">
 
+		<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Calligraffitti" rel="stylesheet">
 		<link rel="stylesheet" href="assets/css/reset.css">
 		<link rel="stylesheet" href="assets/css/main.css">
 	</head>
 	<body>
 
-		<div class="content">
-			<div class="top-angle"></div>
-			<img class="logo" src="assets/img/logo.png">
-			<h1>Hello World!</h1>
-			<p>Yep, you've got the Circus Starter project working.</p>
-			<p>Congratulations! You're ready to code.</p>
-			<code>1.1.0</code>
-			<div class="bottom-angle"></div>
+
+
+	<!-- desktop menu -->
+		<nav>
+		  <!-- at a mobile breakpoint, this will be invisible until it has the class "open" -->
+		  <div class="desktop-menu">
+		  	<div class="drop-menu">
+			    <li><a href="#">Gkc</a></li>
+			      <div class="dropdown-content">
+			        <a href="#">About Us</a>
+			        <a href="#">Our Mission</a>
+			        <a href="#">Information</a>
+			      </div>
+		    </div>
+	      	<div class="drop-menu">
+	    	    <li><a href="#">Give</a></li>
+	    	      <div class="dropdown-content">
+	    	        <a href="#">Volunteer</a>
+	    	        <a href="#">Serve</a>
+	    	        <a href="#">Donate</a>
+	    	      </div>
+	        </div>
+	        <div class="drop-menu">
+	    	    <li><a href="#">Shop</a></li>
+	    	      <div class="dropdown-content">
+	    	        <a href="https://www.etsy.com/shop/BeMoreRandom?ref=hdr_shop_menu" target='_blank'>Etsy Shop</a>
+	    	      </div>
+	        </div>
+            <div class="drop-menu">
+		    	<li><a href="#">Contact</a></li>
+        	      <div class="dropdown-content">
+        	        <a href="#">Contact Us</a>
+        	        <a href="#">Seek Help</a>
+        	      </div>
+            </div>
+		  </div>
+		  <div class="donate-button-desktop">
+			<a href="#"><h1>Donate</h1></a>
+		  </div>
+
+		</nav>
+
+
+
+
+	<!-- hamburger menu -->
+		<div class="top-fixed-container">
+			<div id="menu-container">
+
+			   <div id="menu-wrapper">
+			      <div id="hamburger-menu">
+			      	<span></span>
+			      	<span></span>
+			      	<span></span>
+			      </div>
+			      <!-- hamburger-menu -->
+			   </div>
+
+			   <!-- menu-wrapper -->
+			   <ul class="menu-list accordion">
+			      <li id="nav1" class="toggle accordion-toggle"> 
+			         <span class="icon-plus"></span>
+			         <a class="menu-link" href="#">Gkc</a>
+			      </li>
+
+			      <!-- accordion-toggle -->
+			      <ul class="menu-submenu accordion-content">
+			         <li><a class="head" href="#">About Us</a></li>
+			         <li><a class="head" href="#">Our Mission</a></li>
+			         <li><a class="head" href="#">Information</a></li>
+			      </ul>
+
+			      <!-- menu-submenu accordon-content-->
+			      <li id="nav2" class="toggle accordion-toggle"> 
+			         <span class="icon-plus"></span>
+			         <a class="menu-link" href="#">Give</a>
+			      </li>
+
+			      <!-- accordion-toggle -->
+			      <ul class="menu-submenu accordion-content">
+			         <li><a class="head" href="#">Volunteer</a></li>
+			         <li><a class="head" href="#">Serve</a></li>
+			         <li><a class="head" href="#">Donate</a></li>
+			      </ul>
+
+			      <!-- menu-menu accordon-content-->
+			      <li id="nav3" class="toggle accordion-toggle"> 
+			         <a class="menu-link" href="#">Shop</a>
+			      </li>
+
+			      <!-- accordion-toggle -->
+			      <ul class="menu-submenu accordion-content">
+			         <li><a class="head" href="https://www.etsy.com/shop/BeMoreRandom?ref=hdr_shop_menu" target='_blank'">Etsy Shop</a></li>
+			      </ul>
+
+			      <!-- menu-menu accordon-content-->
+			      <li id="nav4" class="toggle accordion-toggle"> 
+			         <a class="menu-link" href="#">Contact</a>
+			      </li>
+
+			      <!-- accordion-toggle -->
+			      <ul class="menu-submenu accordion-content">
+			         <li><a class="head" href="#">Contact Us</a></li>
+			         <li><a class="head" href="#">Seek Help</a></li>
+			      </ul>
+			   </ul>
+
+			</div>
+			<!-- menu-container -->
+
+		<!-- donate button mobile -->
+			<div id="donate-button-mobile">
+				<a href="#"><h1>Donate</h1></a>
+			</div>
 		</div>
 
 
+
+
+	<!-- logo desktop-->
+		<div class="logo-desktop">
+			<img src="assets/img/logo-desktop.png" alt="">
+		</div>
+
+	<!-- logo mobile-->	
+		<div class="logo-mobile">
+			<img src="assets/img/logo-mobile.png" alt="">
+		</div>
+
+	<!-- image slider -->
+		<div id="slider">
+			<figure>
+				<img src="assets/img/1.jpg" alt="">
+				<img src="assets/img/2.jpg" alt="">
+				<img src="assets/img/4.jpg" alt="">
+				<img src="assets/img/5.jpg" alt="">
+				<img src="assets/img/7.jpg" alt="">
+			</figure>
+		</div>
+
+
+
+	<!-- quote -->	
+		<div class="quote">
+			<p>“ And do not forget to do good and to share with others, for with such sacrifices God is pleased ."</p>
+			<p>– Hebrews 13:16</p>
+		</div>
+
+
+
+
+		<!-- tabs -->
+		<section class="tabs-section-container">
+			<ul class="tabs">
+			   <li class="active" rel="tab1">Donate</li>
+			   <li rel="tab2">Volunteer</li>
+			   <li rel="tab3">Shop</li>
+			   <li rel="tab4">Subscribe</li>
+			   <li rel="tab5">Seek Help</li>
+			</ul>
+
+			<div class="tab_container">
+			  	<!-- #tab1 -->	
+		  		<h3 class="d_active tab_drawer_heading" rel="tab1">Donate</h3>
+			  	<div id="tab1" class="tab_content">
+				   	<h2>Donate Now</h2>
+				   	<p>How much would you like to give?</p>
+				   	<div class="amounts">
+				   		<p>$50</p>
+				   		<p>$100</p>
+				   		<p>$200</p>
+				   		<p><input type="text" name="amount" placeholder="Other Amount"></p>
+				   	</div>
+				   	<div class="button-tabs">
+				   		<a href="#"><h1>Donate Now</h1></a>
+				   	</div>
+			  	</div>
+
+			  	<!-- #tab2 -->
+			  	<h3 class="tab_drawer_heading" rel="tab2">Volunteer</h3>
+			  	<div id="tab2" class="tab_content">
+			  		<h2>Volunteer Sign Up</h2>
+			   		<p>Sign up to volunteer and help those in need.</p>
+			   		<div class="button-tabs">
+			   			<a href="#"><h1>Sign Me Up!</h1></a>
+			   		</div>
+			  	</div>
+
+			  	<!-- #tab3 -->
+			  	<h3 class="tab_drawer_heading" rel="tab3">Shop</h3>
+			  	<div id="tab3" class="tab_content">
+			  		<h2>Shop Our Etsy Store</h2>
+			    	<img src="assets/img/etsy.jpg" alt="etsy">
+			    	<div class="button-tabs">
+			    		<a href="https://www.etsy.com/shop/BeMoreRandom?ref=hdr_shop_menu" target='_target'"><h1>Shop Now</h1></a>
+			    	</div>
+			  	</div>
+
+			  	<!-- #tab4 --> 
+			  	<h3 class="tab_drawer_heading" rel="tab4">Subscribe</h3>
+			  	<div id="tab4" class="tab_content">
+			  		<h2>Subscribe to our Newsletter</h2>
+			    	<p>See what's going on within the Grace Klein Community and events coming up.</p>
+			    	<input type="text" name="email" placeholder="Your Email:">
+			    	<div class="button-tabs">
+			    		<a href="#"><h1>Subscribe Now</h1></a>
+			    	</div>
+			  	</div>
+			  
+			  	<!-- #tab5 --> 
+			  	<h3 class="tab_drawer_heading" rel="tab5">Seek Help</h3>
+			  	<div id="tab5" class="tab_content">
+			  		<h2>Seek Help</h2>
+			    	<p>Need food, clothing or prayers? Send us a prayer request or a message:</p>
+			    	<p>Prayers: <em>prayer@gracekleincommunity.com</em></p>
+			    	<div class="button-tabs">
+			    		<a href="mailto:help@gracekleincommunity.com?subject=Please%20Help" target="_top"><h1>I Need Help</h1></a>
+			    	</div>
+			  	</div>
+			  
+			<!-- .tab_container -->
+			</div>	
+		</section>	
+	
+
+
+
+		<!-- footer -->
+		<div class="footer">
+			<div class="footer-info-left">
+				<p>Phone: 205-390-2211</p>
+				<p>Hours of Operation: 7am to 4pm M-F</p>
+				<p>Address: 2652 Old Rocky Ridge Road, Birmingham, AL 35216</p>
+			</div>
+			<div class="social">
+				<p>FOLLOW US:</p>
+				<img src="assets/img/fb.png" alt="fb">
+				<img src="assets/img/twitter.png" alt="twitter">
+			</div>
+		</div>
+
+	
+		<script
+		  src="https://code.jquery.com/jquery-3.2.1.js"
+		  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+		  crossorigin="anonymous"></script>
+
 		<script src="assets/js/main.js"></script>
+		
 	</body>
 </html>
