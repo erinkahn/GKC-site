@@ -80,7 +80,7 @@ nav .desktop-menu{
 }
 
 /* keep height of donate button same on desktop*/
-.donate-button-desktop {
+.donate-button-desktop, .donate-button-hide {
 	margin-bottom: 92px;
 }
 
@@ -545,9 +545,10 @@ a.active {
     justify-content: center;
 }
 
-/* donate $$$ amounts */
-.tab_content div.amounts p{
-    padding: 0 15px;
+/* donate $$$ amounts label position */
+.tab_content div.amounts label{
+    margin-top: 3px;
+    padding-right: 19px;
 }
 
 /* hide inside tab heading unless active/clicked */
@@ -666,6 +667,11 @@ a.active {
         color: #666965;
     }
 
+    /* donate $$$ amounts label position */
+    .tab_content div.amounts label{
+        padding-right: 8px;
+    }
+
     /* hover donate btn */
     .tab_content .button-tabs h1:hover{
         background-color: #8dc440;
@@ -770,10 +776,11 @@ a.active {
 }
 
 
-/* ABOUT AND MISSION PAGES CONTENT SECTION----------------------------------------------*/
+/* ABOUT, MISSION, SERVE, DONATE PAGES CONTENT SECTION----------------------------------------------*/
 
 /* content wrappers */
-.about-content-wrapper, .mission-content-wrapper{
+.about-content-wrapper, .mission-content-wrapper,
+.serve-content-wrapper{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -781,14 +788,19 @@ a.active {
 }
 
 /* h1 */
-.about-content-wrapper h1, .mission-content-wrapper h1{
+.about-content-wrapper h1, .mission-content-wrapper h1,
+.serve-content-wrapper h1, .donate-content-wrapper h1,
+.contact-content-wrapper h1{
     font-size: 1.3em;
     line-height: 25px;
     margin-bottom: 10px;
 }
 
 /* h2 */
-.mission-content-wrapper h2{
+.mission-content-wrapper h2,
+.serve-content-wrapper h2,
+.donate-content-wrapper h2,
+.contact-content-wrapper h2{
     font-weight: bold;
     text-decoration: underline;
     padding-bottom: 5px;
@@ -808,12 +820,14 @@ a.active {
 /* content divs */
 .about-content-wrapper div:nth-child(2),
 .mission-content-wrapper div:nth-child(2),
-.mission-content-wrapper div:nth-child(3){
+.mission-content-wrapper div:nth-child(3),
+.donate-content-wrapper div:nth-child(2){
     margin-top: 20px;
 }
 
 /* paragraphs */
-.about-content-wrapper p, .mission-content-wrapper p{
+.about-content-wrapper p, .mission-content-wrapper p,
+.serve-content-wrapper p, .donate-content-wrapper p{
     line-height: 20px;
     padding-bottom: 10px;
 }
@@ -821,13 +835,14 @@ a.active {
 /* when the screen is a tablet or mobile use this margin */
 @media screen and (max-width: 768px) {
     /* mobile content wrapper */
-    .about-content-wrapper, .mission-content-wrapper{
+    .about-content-wrapper, .mission-content-wrapper,
+    .serve-content-wrapper{
          margin: 30px;
     }
 }
 
 
-/* VOLUNTEER PAGE FORM ---------------------------------------------------*/
+/* VOLUNTEER DONATE AND CONTACT PAGE FORMs ---------------------------------------------------*/
 
 /* volunteer form container wrapper */
 .volunteer-content-wrapper div{
@@ -839,14 +854,17 @@ a.active {
 }
 
 /* form input boxes */
-.volunteer-content-wrapper div input{
+.volunteer-content-wrapper div input,
+.donate-content-wrapper div input,
+.contact-content-wrapper div input{
     font-size: 1em;
     padding: 10px;
     margin-bottom: 15px;
 }
 
 /* submit button */
-.volunteer-content-wrapper div.submit-btn{
+.volunteer-content-wrapper div.submit-btn,
+.contact-content-wrapper div.submit-btn{
     padding: 10px;
     border: 3px solid #666965;
     text-align: center;
@@ -854,29 +872,182 @@ a.active {
 }
 
 /* hover submit button bkg color*/
-.volunteer-content-wrapper div.submit-btn:hover{
+.volunteer-content-wrapper div.submit-btn:hover,
+.contact-content-wrapper div.submit-btn:hover{
     background-color: #8dc440;
 }
 
 /* hover submit button text color */
-.volunteer-content-wrapper div.submit-btn a:hover{
+.volunteer-content-wrapper div.submit-btn a:hover,
+.contact-content-wrapper div.submit-btn a:hover{
     color: #fff;
 }
 
-/* when the screen is a tablet or mobile use this form layout */
+/* DONATE CONTENT FORM -----------------------------------------------------*/
+
+
+.donate-button-hide{
+    visibility: hidden;
+}
+
+/* green background color */
+.form-bkg-color{
+    background-color: #8dc440;
+    padding: 30px;
+}
+
+/* white text color */
+.donate-content-wrapper form, .donate-form h1,
+.donate-content-wrapper .submit-btn a{
+    color: #fff;
+}
+
+/* all divs column direction */
+.donate-content-wrapper div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 540px;
+    margin: auto;
+}
+
+/* first div margin spacing */
+div.donate-text-input-row:first-child{
+   margin-bottom: -28px;
+}
+
+/* input row width 100% */
+.donate-content-wrapper form .donate-text-input-row input,
+.donate-content-wrapper select{
+    width: 100%;
+}
+
+/* selection font size, height and margin */
+.donate-content-wrapper select{
+    margin-bottom: 8px;
+    height: 42px;
+    margin-right: 5px;
+    font-size: 1em;
+    color: gray;
+}
+
+/* paragraph margin spacing*/
+.donate-content-wrapper form p.amount,
+.donate-content-wrapper form p.billing,
+.donate-content-wrapper form p.expiration{
+    margin-top: 10px;
+}
+
+/* make radio buttons sit next to e/o */
+.donate-content-wrapper .donate-form div{
+    flex-direction: row;
+}
+
+/* space between labels and inputs */
+.donate-content-wrapper .donate-form div label{
+    padding-right: 22px;
+}
+
+/* align inputs with labels */
+.donate-content-wrapper .donate-form div input{
+    margin-top: -2px;
+}
+
+/* show other amount box when clicked */
+.show {
+  display: inherit !important;
+  width: 80px;
+  float: right;
+}
+
+/*security code */
+#securitycode{
+    margin-top: 2px;
+}
+
+/* submit btn*/
+.donate-content-wrapper div.submit-btn{
+    padding: 10px;
+    border: 3px solid #fff;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+/* submit btn hover */
+.donate-content-wrapper div.submit-btn:hover{
+    background: #666965;
+}
+
+/* when the screen is a tablet or mobile use this width */
 @media screen and (max-width: 768px) {
 
+    .donate-content-wrapper div{
+        width: 330px;
+        font-size: 0.9em;
+    }
 
+    /* space between labels and inputs */
+    .donate-content-wrapper .donate-form div label{
+        padding-right: 8px;
+    }
+
+    /* show other amount box when clicked */
+    .show {
+      width: 70px;
+    }
 }
 
 
+/* CONTACT PAGE CONTENT -----------------------------------*/
 
+.contact-content-wrapper .emails{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 320px;
+    margin: auto;
+    font-size: 0.9em;
+}
 
+.contact-content-wrapper .numbers-addresses{
+    border-top: 2px solid #8dc440;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 720px;
+    font-size: 0.8em;
+    margin: 15px auto;
+}
 
+.contact-content-wrapper .numbers-addresses p{
+    padding: 5px 0;
+}
 
+/* space between contact divs */
+.contact-content-wrapper div{
+    padding: 10px 10px;
+}
 
+/* align center*/
+.contact-content-wrapper, .contact-content-wrapper h2,
+.contact-content-wrapper p{
+    text-align: center;
+}
 
+/* when the screen is a tablet or mobile stack */
+@media screen and (max-width: 768px) {
+    .contact-content-wrapper .emails{
+        border-bottom: 2px solid #8dc440;
+        font-size: 1em;
+    } 
 
-
+    .contact-content-wrapper .numbers-addresses {
+        flex-direction: column;
+        width: auto;
+        border-top: none;
+        font-size: 1em;
+    }
+}
 
 

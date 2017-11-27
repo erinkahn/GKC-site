@@ -181,10 +181,16 @@
 				   	<h2>Donate Now</h2>
 				   	<p>How much would you like to give?</p>
 				   	<div class="amounts">
-				   		<p>$50</p>
-				   		<p>$100</p>
-				   		<p>$200</p>
-				   		<p><input type="text" name="amount" placeholder="Other Amount"></p>
+						<input type="radio" name="amount" id="30">
+						<label for="30">$30</label>
+						<input type="radio" name="amount" id="50">
+						<label for="50">$50</label>
+						<input type="radio" name="amount" id="100">
+						<label for="100">$100</label>
+						<input type="radio" id="other" name="amount" 
+							onchange="document.getElementById(this.id + 'Text').classList.toggle('show')">
+						<label for="other">Other</label>
+						<input id="otherText" type="text" placeholder="$0.00" style="display: none;">
 				   	</div>
 				   	<div class="button-tabs">
 				   		<a href="#"><h1>Donate Now</h1></a>
