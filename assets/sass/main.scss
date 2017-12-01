@@ -29,29 +29,24 @@ nav{
 	flex-direction: row;
 	justify-content: space-between;
 
+    .desktop-menu {
+        display: flex;
+        list-style: none;
+        flex-direction: row;
+        text-transform: uppercase;
+
+        // desktop nav items
+        li{
+           padding: 0 40px; 
+        }
+    }
 }
 
-/* desktop nav */
-nav .desktop-menu{
-	display: flex;
-	list-style: none;
-	flex-direction: row;
-	text-transform: uppercase;
-}
-
-/* desktop nav items*/
-.desktop-menu li{
-	padding: 0 40px;
-}
 
 /* desktop nav items hover*/
 .desktop-menu li a:hover{
 	border-bottom: 2px solid #8dc440;
 }
-
-/*.dropmenu{
-	position: relative;
-}*/
 
 /* submenu items hidden when NOT hovering menu items */
 .dropdown-content{
@@ -59,6 +54,14 @@ nav .desktop-menu{
 	min-width: 90px;
 	position: absolute; 
     z-index: 1;
+
+    a { //space bt submenu items
+        padding-bottom: 12px;
+
+        &:hover{ //hover submenu items
+            color: #8dc440;
+        }
+    }
 }
 
 /* submenu items SHOW when hover over menu items */
@@ -69,15 +72,6 @@ nav .desktop-menu{
 	font-size: 12px;
 }
 
-/* space between submenu items */
-.dropdown-content a{
-	padding-bottom: 12px;
-}
-
-/* hover over subitems*/
-.dropdown-content a:hover{
-	color: #8dc440;
-}
 
 /* keep height of donate button same on desktop*/
 .donate-button-desktop, .donate-button-hide {
@@ -103,11 +97,10 @@ ul {
 a { 
 	text-decoration: none; 
 	color: #666965;
-}
 
-/* when a is active make menu item white */
-a.active {
-	color: #fff;
+    &.active{
+        color: #fff; /* when a is active make menu item white */
+    }
 }
 
 
@@ -123,23 +116,19 @@ a.active {
 .donate-button-desktop {
 	background-color: #8dc440;
 	padding: 0 19px;
-}
 
-/* donate text */
-#donate-button-mobile a,
-.donate-button-desktop a{
-	color: #fff;
-	padding: 5px;
-	text-transform: uppercase;
-}
+    a { //donate text
+        color: #fff;
+        padding: 5px;
+        text-transform: uppercase;
+    }
 
-/* donate button hover */
-#donate-button-mobile:hover,
-.donate-button-desktop:hover{
-	background-color: #666965;
-	padding: 0 19px;
-	transition-duration: .6s;
-	transition-timing-function: ease;
+    &:hover{ /* donate button hover */
+        background-color: #666965;
+        padding: 0 19px;
+        transition-duration: .6s;
+        transition-timing-function: ease;
+    }
 }
 
 /* burger menu wrapper */
@@ -155,24 +144,22 @@ a.active {
     width: 25px;
     height: 20px;
     margin: 15px;
-}
 
-/* hamburger spans animation */
-#hamburger-menu span {
-    opacity: 1;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-    left: 0;
-    display: block;
-    width: 100%;
-    height: 2px;
-    border-radius: 10px;
-    color: #666965;
-    background-color: #666965;
-    position: absolute;
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-    -webkit-transition: .4s ease-in-out;
-    transition: .4s ease-in-out;
+    span { /* hamburger spans animation */
+        opacity: 1;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 2px;
+        border-radius: 10px;
+        color: #666965;
+        background-color: #666965;
+        position: absolute;
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: .4s ease-in-out;
+        transition: .4s ease-in-out;
+    }
 }
 
 /* first span burger position*/
@@ -190,37 +177,37 @@ a.active {
     top: 18px;
 }
 
-/* 1st span burger animation rotate */
-#hamburger-menu.open span:nth-child(1) {
-    top: 9px;
-    -webkit-transform: rotate(135deg);
-    transform: rotate(135deg);
+// when burger menu opens animate to x
+#hamburger-menu.open{
+
+    span:nth-child(1) { /* 1st span burger animation rotate */
+        top: 9px;
+        -webkit-transform: rotate(135deg);
+        transform: rotate(135deg);
+    }
+
+    span:nth-child(2) { /* 2nd span burger animation hide */
+        opacity: 0;
+        left: -60px;
+    }    
+
+    span:nth-child(3) { /* 3rd span burger animation rotate */
+        top: 9px;
+        -webkit-transform: rotate(-135deg);
+        transform: rotate(-135deg);
+    }
 }
 
-/* 2nd span burger animation hide */
-#hamburger-menu.open span:nth-child(2) {
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    left: -60px;
-}
-
-/* 3rd span burger animation rotate */
-#hamburger-menu.open span:nth-child(3) {
-    top: 9px;
-    -webkit-transform: rotate(-135deg);
-    transform: rotate(-135deg);
-}
 
 /* submenu position */
 .menu-list .menu-submenu {
     padding-left: 20px;
     margin: 20px 0;
     line-height: 40px;
-}
 
-/* underline submenu items on hover */
-.menu-list .menu-submenu li a:hover{
-	border-bottom: 2px solid #8dc440;
+    li a:hover{ /* underline submenu items on hover */
+        border-bottom: 2px solid #8dc440;
+    }
 }
 
 /* main menu ul*/
@@ -236,20 +223,19 @@ a.active {
     overflow-y: auto;
     overflow-x: hidden;
     left: -100%;
+
+    li.accordion-toggle { /* main menu li items*/
+        font-size: 16px;
+        padding: 20px;
+        text-transform: uppercase;
+        border-top: 1px solid #dbdcd2;
+    }
+
+    li:first-of-type { /* hides top border of menu*/
+        border-top: 0;
+    }
 }
 
-/* main menu li items*/
-.menu-list li.accordion-toggle {
-    font-size: 16px;
-    padding: 20px;
-    text-transform: uppercase;
-    border-top: 1px solid #dbdcd2;
-}
-
-/* hides top border of menu*/
-.menu-list li:first-of-type {
-    border-top: 0;
-}
 
 /* menu and submenu*/
 .accordion-toggle, 
@@ -319,40 +305,105 @@ a.active {
 
 /* IMAGE SLIDER & LOGO------------------------------------------*/
 
-#slider { 
-    margin-top: -30px;
-    overflow: hidden; 
+
+#slider{
+    height: 400px;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    margin-top: 40px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);
+    position: relative;
+    width: 700px;
 }
 
-/* put slider imgs under logo*/
-#slider img{
-    z-index: -1;
+#slider ul{
+    list-style: none;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1000%;
+    transition: left .3s linear;
+    -moz-transition: left .3s linear;
+    -o-transition: left .3s linear;
+    -webkit-transition: left .3s linear;
+    margin-left: -29px;
+    font-family: century gothic;
+    color: #666;
 }
 
-#slider figure img { 
-    width: 20%; 
-    padding-right: 10px;
-    float: left; 
+#slider li{
+    float: left;
+    position: relative;
+    width: 10%;
+    display: inline-block;
+    height: 200px;
 }
 
-#slider figure { 
-  position: relative;
-  animation: 17s slidy infinite; 
-  transition-timing-function: ease;
+/*** Content ***/
+
+.slider-container{
+    margin: 0 auto;
+    padding: 0;
+    width: 91.666%;
+    min-height: 180px;
+    border-bottom: 1px solid #ccc;
 }
 
-@keyframes slidy {
-0% { left: 0%; }
-20% { left: 0%; }
-25% { left: -100%; }
-45% { left: -100%; }
-50% { left: -200%; }
-70% { left: -200%; }
-75% { left: -300%; }
-95% { left: -300%; }
-100% { left: -400%; }
+/*** animation ****/
+
+@-webkit-keyframes slide-animation {
+    0% {opacity:0;}
+    2% {opacity:1;}
+    20% {left:0px; opacity:1;}
+    22.5% {opacity:0.6;}
+    25% {left:-100%; opacity:1;}
+    45% {left:-100%; opacity:1;}
+    47.5% {opacity:0.6;}
+    50% {left:-200%; opacity:1;}
+    70% {left:-200%; opacity:1;}
+    72.5% {opacity:0.6;}
+    75% {left:-300%; opacity:1;}
+    95% {opacity:1;}
+    98% {left:-300%; opacity:0;} 
+    100% {left:0px; opacity:0;}
 }
 
+/* animation and hover pause */
+#slider ul{
+    -webkit-animation: slide-animation 25s infinite;
+
+    &:hover{ /* use to paused the content on mouse over */
+        -moz-animation-play-state: paused;
+        -webkit-animation-play-state: paused;
+    }
+}
+
+/* when the screen is a tablet or mobile use this image */
+@media screen and (max-width: 768px) {
+   #slider {
+        width: 353px;
+        height: 230px;
+
+        ul{
+             margin-left: -15px;
+        }
+
+        img{
+            width: 390px;
+            height: 241px;
+        }
+   }
+
+}
+    
+
+
+
+
+/* LOGO -----------------------------------------------------*/
 
 /* when the screen is bigger than tablet use this logo */
 @media screen and (min-width: 769px) {
@@ -428,7 +479,7 @@ a.active {
 
 /* TABS ---------------------------------------------------*/
 
-/* tab */
+
 .tabs {
     margin: 0;
     padding: 0;
@@ -439,69 +490,68 @@ a.active {
     display: flex;
     flex-direction: row;
 
+    li { /* tab names */
+        width: 100%;
+        cursor: pointer;
+        flex-grow: 1;
+        text-align: center;
+        padding-top: 10px;
+        height: 120px;
+        line-height: 31px;
+        white-space: nowrap;
+        border-right: 1px solid #fff;
+        background-color: #666965;
+        color: #fff;
+        overflow: hidden;
+        position: relative;
+        background-repeat: no-repeat; /* icons on each tab */
+        background-position: center; /* icons on each tab */
+        background-position: 50% 80%; /* icons on each tab */
+
+        &:hover{ /* hover over tabs */
+            background-color: #8dc440;
+            color: #fff;
+            transition: 0.5s ease;
+        }
+    }
+
 }
 
-/* tab names */
-.tabs li {
-    width: 100%;
-    cursor: pointer;
-    flex-grow: 1;
-    text-align: center;
-    padding-top: 10px;
-    height: 120px;
-    line-height: 31px;
-    white-space: nowrap;
-    border-right: 1px solid #fff;
-    background-color: #666965;
-    color: #fff;
-    overflow: hidden;
-    position: relative;
-}
 
-/* hover over tabs */
-.tabs li:hover {
-    background-color: #8dc440;
-    color: #fff;
-    transition: 0.5s ease;
-}
 
-/* active tab */
-.tabs li.active {
-    background-color: #8dc440;
-    color: #fff;
-}
+.tabs {
 
-/* icons on each tab */
-.tabs li{
-    background-repeat: no-repeat;
-    background-position: center;
-    background-position: 50% 80%;
-}
+    /* active tab */
+    li.active { 
+        background-color: #8dc440;
+        color: #fff;
+    }
 
-/* donate icon */
-.tabs li:first-child{
-    background-image: url('../img/donate.png');
-}
+    /* donate icon */
+    :first-child{ 
+        background-image: url('../img/donate.png');
+    }
 
-/* volunteer icon */
-.tabs li:nth-child(2){
-    background-image: url('../img/volunteer.png');
-}
+    /* volunteer icon */
+    :nth-child(2){ 
+        background-image: url('../img/volunteer.png');
+    }
 
-/* shop icon */
-.tabs li:nth-child(3){
-    background-image: url('../img/shop.png');
-}
+    /* shop icon */
+    :nth-child(3){
+        background-image: url('../img/shop.png');
+    }
 
-/* subscribe icon */
-.tabs li:nth-child(4){
-    background-image: url('../img/subscribe.png');
-}
+    /* subscribe icon */
+    :nth-child(4){
+        background-image: url('../img/subscribe.png');
+    }
 
-/* help icon */
-.tabs li:nth-child(5){
-    background-image: url('../img/seek-help.png');
-    border-right: none;
+    /* help icon */
+    :nth-child(5){
+        background-image: url('../img/seek-help.png');
+        border-right: none;
+    }
 }
 
 
@@ -519,37 +569,41 @@ a.active {
     text-align: center;
     color: #fff;
     display: none; /* hide content unless clicked active*/
+
+    /* tab h2 */
+    h2{
+        padding-top: 120px;
+        font-size: 2em;
+        padding-bottom: 29px;
+    }
 }
 
-/* tab h2 */
-.tab_content h2{
-    padding-top: 120px;
-    font-size: 2em;
-    padding-bottom: 29px;
-}
 
 /* tab p */
 .tab_content p{
     padding-bottom: 15px;
+
+    em{
+        font-style: italic;
+        color: gray;
+    }
 }
 
-.tab_content p em{
-    font-style: italic;
-    color: gray;
-}
+
 
 /* donate $$ amount div row */
 .tab_content div.amounts{
     display: flex;
     flex-direction: row;
     justify-content: center;
+
+    label{ /* donate $$$ amounts label position */
+        margin-top: 3px;
+        padding-right: 19px;
+    }
 }
 
-/* donate $$$ amounts label position */
-.tab_content div.amounts label{
-    margin-top: 3px;
-    padding-right: 19px;
-}
+
 
 /* hide inside tab heading unless active/clicked */
 .tab_drawer_heading { 
@@ -562,13 +616,15 @@ a.active {
     color: #fff;
     margin:  40px auto;
     width: 190px;
+
+    /* button h1 */
+    h1{
+        color: #fff;
+        padding: 15px 0;
+    }
 }
 
-/* button h1 */
-.button-tabs h1{
-    color: #fff;
-    padding: 15px 0;
-}
+
 
 /* hover button*/
 .tab_content .button-tabs:hover{
@@ -720,23 +776,23 @@ a.active {
     .footer-info-left{
         text-align: center;
         margin: 35px auto;
-    }
 
-    .footer-info-left p{
-        padding-bottom: 20px;
+        p{
+            padding-bottom: 20px;
+        }
     }
 
     .social{
         margin: 0 0 30px 0;
         text-align: center;
-    }
 
-    .social p{
-        padding-bottom: 10px;
-    }
+        p{
+            padding-bottom: 10px;
+        }
 
-    .social img{
-        padding: 0 6px 0 0;
+        img{
+            padding: 0 6px 0 0;
+        }
     }
 
 }
@@ -752,27 +808,29 @@ a.active {
 
     .footer-info-left{
         margin: 45px 0 20px 35px;
-    }
 
-    .footer-info-left p{
-        padding-bottom: 28px;
-        font-size: 0.8em;
+        p{
+            padding-bottom: 28px;
+            font-size: 0.8em;
+        }
     }
 
     .social{
         text-align: right;
         margin: 49px 36px 20px 30px;
-    }
 
-    .social p{
-        padding-bottom: 19px;
-        padding: 0 15px 28px 0;
-    }
+        p{
+            padding-bottom: 19px;
+            padding: 0 15px 28px 0;
+        }
 
-    .social img{
-        padding-bottom: 18px;
-        padding: 0 10px 0 0;
+        img{
+            padding-bottom: 18px;
+            padding: 0 10px 0 0;
+        }
+    
     }
+    
 }
 
 
@@ -784,7 +842,8 @@ a.active {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 50px 100px;
+    margin: 50px auto;
+    max-width: 600px;
 }
 
 /* h1 */
@@ -972,11 +1031,10 @@ div.donate-text-input-row:first-child{
     text-align: center;
     margin-bottom: 40px;
     margin-top: 20px;
-}
 
-/* submit btn hover */
-.donate-content-wrapper div.submit-btn:hover{
-    background: #666965;
+    &:hover{
+        background: #666965;
+    }
 }
 
 /* when the screen is a tablet or mobile use this width */

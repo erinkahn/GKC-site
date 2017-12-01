@@ -9,80 +9,79 @@ body {
     font-family: 'Nunito', sans-serif;
 }
 
-/* THIS IS THE DESKTOP MENU ---------------------------------------*/
+/* THIS IS THE DESKTOP MENU ------------------------------------------*/
 
 
 /* when the screen is bigger than tablet, hide the burger */
 @media screen and (min-width: 769px) {
-	#menu-container, #donate-button-mobile{
-		display: none; 
-	}
+    #menu-container, #donate-button-mobile{
+        display: none; 
+    }
 
-	nav .desktop-menu{
-		margin: 17px;
-	}
+    nav .desktop-menu{
+        margin: 17px;
+    }
 }
 
 /* desktop nav */
 nav{
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 
 }
 
 /* desktop nav */
 nav .desktop-menu{
-	display: flex;
-	list-style: none;
-	flex-direction: row;
-	text-transform: uppercase;
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    text-transform: uppercase;
 }
 
 /* desktop nav items*/
 .desktop-menu li{
-	padding: 0 40px;
+    padding: 0 40px;
 }
 
 /* desktop nav items hover*/
 .desktop-menu li a:hover{
-	border-bottom: 2px solid #8dc440;
+    border-bottom: 2px solid #8dc440;
 }
 
-.dropmenu{
-	position: relative;
-	display: inline-block;
-}
+/*.dropmenu{
+    position: relative;
+}*/
 
-/* submenu items hide when NOT on hover */
+/* submenu items hidden when NOT hovering menu items */
 .dropdown-content{
-	display: none;
-	min-width: 90px;
-	position: absolute;
+    display: none; /* hide */
+    min-width: 90px;
+    position: absolute; 
     z-index: 1;
 }
 
-/* submenu items SHOW when ON HOVER */
+/* submenu items SHOW when hover over menu items */
 .drop-menu:hover .dropdown-content {
     display: flex;
-	flex-direction: column;
-	margin: 20px 0 0 39px;
-	font-size: 12px;
+    flex-direction: column;
+    margin: 20px 0 0 39px;
+    font-size: 12px;
 }
 
 /* space between submenu items */
 .dropdown-content a{
-	padding-bottom: 12px;
+    padding-bottom: 12px;
 }
 
 /* hover over subitems*/
 .dropdown-content a:hover{
-	color: #8dc440;
+    color: #8dc440;
 }
 
 /* keep height of donate button same on desktop*/
-.donate-button-desktop {
-	margin-bottom: 92px;
+.donate-button-desktop, .donate-button-hide {
+    margin-bottom: 92px;
 }
 
 
@@ -92,55 +91,55 @@ nav .desktop-menu{
 
 /* when the screen is a tablet or mobile, hide the menu items */
 @media screen and (max-width: 768px) {
-	nav, .donate-button-desktop{
+    nav, .donate-button-desktop{
       display: none; 
-	}
+    }
 }
 
 ul { 
-	list-style: none; 
+    list-style: none; 
 }
 
 a { 
-	text-decoration: none; 
-	color: #666965;
+    text-decoration: none; 
+    color: #666965;
 }
 
 /* when a is active make menu item white */
 a.active {
-	color: #fff;
+    color: #fff;
 }
 
 
 /* burger and donate container */
 .top-fixed-container{
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between; /* OMG THIS MADE donate now go to the right */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* OMG THIS MADE donate now go to the right */
 }
 
 /* donate button div */
 #donate-button-mobile,
 .donate-button-desktop {
-	background-color: #8dc440;
-	padding: 0 19px;
+    background-color: #8dc440;
+    padding: 0 19px;
 }
 
 /* donate text */
 #donate-button-mobile a,
 .donate-button-desktop a{
-	color: #fff;
-	padding: 5px;
-	text-transform: uppercase;
+    color: #fff;
+    padding: 5px;
+    text-transform: uppercase;
 }
 
 /* donate button hover */
 #donate-button-mobile:hover,
 .donate-button-desktop:hover{
-	background-color: #666965;
-	padding: 0 19px;
-	transition-duration: .6s;
-	transition-timing-function: ease;
+    background-color: #666965;
+    padding: 0 19px;
+    transition-duration: .6s;
+    transition-timing-function: ease;
 }
 
 /* burger menu wrapper */
@@ -221,7 +220,7 @@ a.active {
 
 /* underline submenu items on hover */
 .menu-list .menu-submenu li a:hover{
-	border-bottom: 2px solid #8dc440;
+    border-bottom: 2px solid #8dc440;
 }
 
 /* main menu ul*/
@@ -318,6 +317,737 @@ a.active {
 }
 
 
-/* --------------------------------------------------------------*/
+/* IMAGE SLIDER & LOGO------------------------------------------*/
+
+#slider { 
+    margin-top: -30px;
+    overflow: hidden; 
+}
+
+/* put slider imgs under logo*/
+#slider img{
+    z-index: -1;
+}
+
+#slider figure img { 
+    width: 20%; 
+    padding-right: 10px;
+    float: left; 
+}
+
+#slider figure { 
+  position: relative;
+  animation: 17s slidy infinite; 
+  transition-timing-function: ease;
+}
+
+@keyframes slidy {
+0% { left: 0%; }
+20% { left: 0%; }
+25% { left: -100%; }
+45% { left: -100%; }
+50% { left: -200%; }
+70% { left: -200%; }
+75% { left: -300%; }
+95% { left: -300%; }
+100% { left: -400%; }
+}
+
+
+/* when the screen is bigger than tablet use this logo */
+@media screen and (min-width: 769px) {
+    .logo-desktop, .about-desktop, .mission-desktop, .volunteer-desktop,
+    .serve-desktop, .donate-desktop, .contact-desktop{
+        justify-content: center;
+        display: flex;
+        max-width: 30px auto;
+        margin: -30px 0 20px 0;
+    }
+
+    .logo-desktop img{
+        z-index: 2;
+    }
+
+    .logo-mobile, .g-mobile, .about-mobile, .mission-mobile, .volunteer-mobile,
+    .serve-mobile, .donate-mobile, .contact-mobile{
+        display: none;
+    }
+
+    #slider figure{
+        width: 300%;
+    }
+
+}
+
+/* when the screen is a tablet or mobile hide this logo */
+@media screen and (max-width: 768px) {
+
+    .logo-desktop, .about-desktop, .mission-desktop, .volunteer-desktop,
+    .serve-desktop, .donate-desktop, .contact-desktop{
+        display: none;
+    }
+
+    .logo-mobile, .about-mobile, .mission-mobile, .volunteer-mobile,
+    .serve-mobile, .donate-mobile, .contact-mobile{
+        justify-content: center;
+        display: flex;
+        max-width: 30px auto;
+        margin: 30px 0 65px 0;
+    }
+
+    .logo-mobile img{
+        z-index: 2;
+    }
+
+
+    #slider figure { 
+        width: 500%;
+    }
+
+}
+
+/* BIBLE QUOTE-------------------------------------------*/
+
+.quote {
+    margin: 30px;
+    text-align: center;
+    line-height: 35px;
+    font-style: italic;
+    font-size: 1em;
+    font-family: 'Calligraffitti', cursive;
+    color: gray;
+}
+
+/* when the screen is bigger than tablet increase font size */
+@media screen and (min-width: 769px) {
+    .quote{
+        font-size: 1.25em;
+    }
+}
+
+
+/* TABS ---------------------------------------------------*/
+
+/* tab */
+.tabs {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    height: 32px;
+    border-bottom: 1px solid #666965;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+}
+
+/* tab names */
+.tabs li {
+    width: 100%;
+    cursor: pointer;
+    flex-grow: 1;
+    text-align: center;
+    padding-top: 10px;
+    height: 120px;
+    line-height: 31px;
+    white-space: nowrap;
+    border-right: 1px solid #fff;
+    background-color: #666965;
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+}
+
+/* hover over tabs */
+.tabs li:hover {
+    background-color: #8dc440;
+    color: #fff;
+    transition: 0.5s ease;
+}
+
+/* active tab */
+.tabs li.active {
+    background-color: #8dc440;
+    color: #fff;
+}
+
+/* icons on each tab */
+.tabs li{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position: 50% 80%;
+}
+
+/* donate icon */
+.tabs li:first-child{
+    background-image: url('../img/donate.png');
+}
+
+/* volunteer icon */
+.tabs li:nth-child(2){
+    background-image: url('../img/volunteer.png');
+}
+
+/* shop icon */
+.tabs li:nth-child(3){
+    background-image: url('../img/shop.png');
+}
+
+/* subscribe icon */
+.tabs li:nth-child(4){
+    background-image: url('../img/subscribe.png');
+}
+
+/* help icon */
+.tabs li:nth-child(5){
+    background-image: url('../img/seek-help.png');
+    border-right: none;
+}
+
+
+/* tab content container */
+.tab_container {
+    border-bottom: 1px solid #fff;
+    width: 100%;
+    background: #8dc440;
+    overflow: hidden;
+}
+
+
+/* tab content */
+.tab_content {
+    text-align: center;
+    color: #fff;
+    display: none; /* hide content unless clicked active*/
+}
+
+/* tab h2 */
+.tab_content h2{
+    padding-top: 120px;
+    font-size: 2em;
+    padding-bottom: 29px;
+}
+
+/* tab p */
+.tab_content p{
+    padding-bottom: 15px;
+}
+
+.tab_content p em{
+    font-style: italic;
+    color: gray;
+}
+
+/* donate $$ amount div row */
+.tab_content div.amounts{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* donate $$$ amounts label position */
+.tab_content div.amounts label{
+    margin-top: 3px;
+    padding-right: 19px;
+}
+
+/* hide inside tab heading unless active/clicked */
+.tab_drawer_heading { 
+    display: none; 
+}
+
+/* button for each content tabs*/
+.button-tabs{
+    border: 3px solid #fff;
+    color: #fff;
+    margin:  40px auto;
+    width: 190px;
+}
+
+/* button h1 */
+.button-tabs h1{
+    color: #fff;
+    padding: 15px 0;
+}
+
+/* hover button*/
+.tab_content .button-tabs:hover{
+    background-color: #666965;
+}
+
+/* shop etsy img desktop*/
+#tab3 img{
+    width: 50%;
+    border: none;
+}
+
+/* input donate amount */
+#tab1 input[type=text] {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    width: 89px;
+}
+
+/* input donate text color */
+#tab1 input{
+    font-size: 0.8em;
+    color: #fff;
+}
+
+/* input subscribe email newsletter*/
+#tab4 input[type=text] {
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid #fff;
+    margin-top: 50px;
+    width: 300px;
+}
+
+ /* subscribe and volunteer input text color */
+#tab4 input, #tab2 input{
+    font-size: 1em;
+    color: #fff;
+}
+
+/* input volunteer  */
+#tab2 input[type=text] {
+    margin-top: 9px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    width: 300px;
+}
+
+/* when mobile, stack tabs up and down, hide left to right*/
+@media screen and (max-width: 480px) {
+    
+    /* hide horizontal tabs*/
+    .tabs {
+        display: none;
+    }
+
+    .tab_drawer_heading {
+        background-color: #8dc440;
+        color: #fff;
+        border-top: 1px solid #fff;
+        margin: 0;
+        padding: 14px 20px;
+        display: block;
+        cursor: pointer;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        text-align: center;
+    }
+
+    /* active */
+    .d_active {
+        background-color: #666965;
+        color: #fff;
+        text-align: center;
+    }
+
+    .tab_container{
+         margin: 0;
+         background-color: #fff;
+    }
+
+    .tab_content{
+        color: #666965;
+        margin-top: -80px;
+    }
+
+    /* donate button h1 */
+    .button-tabs h1{
+        border: 3px solid #666965;
+        color: #666965;
+    }
+
+    /* donate $$$ amounts label position */
+    .tab_content div.amounts label{
+        padding-right: 8px;
+    }
+
+    /* hover donate btn */
+    .tab_content .button-tabs h1:hover{
+        background-color: #8dc440;
+        color: #fff;
+    }
+
+    /* shop etsy img */
+    #tab3 img{
+        width: 100%;
+    }
+
+    /* input subscribe email newsletter*/
+    #tab4 input[type=text],
+    #tab1 input[type=text],
+    #tab2 input[type=text] {
+        border-bottom: 3px solid #666965;
+    }
+
+    /* input text color */
+    #tab4 input, #tab1 input, #tab2 input{
+        color: #666965;
+    }
+
+}
+
+
+/* FOOTER--------------------------------------------------*/
+
+.footer{
+        background-color: #666965;
+        color: #bcbcbc;
+        display: flex;
+
+}
+
+/* when the screen is a tablet or mobile use this footer style */
+@media screen and (max-width: 768px) {
+
+    .footer{
+        flex-direction: column;
+        align-items: center;
+        font-size: 0.8em;
+        white-space: nowrap;
+    }
+
+    .footer-info-left{
+        text-align: center;
+        margin: 35px auto;
+    }
+
+    .footer-info-left p{
+        padding-bottom: 20px;
+    }
+
+    .social{
+        margin: 0 0 30px 0;
+        text-align: center;
+    }
+
+    .social p{
+        padding-bottom: 10px;
+    }
+
+    .social img{
+        padding: 0 6px 0 0;
+    }
+
+}
+
+
+/* when the screen is bigger than tablet use this footer style */
+@media screen and (min-width: 769px) {
+    
+    .footer{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .footer-info-left{
+        margin: 45px 0 20px 35px;
+    }
+
+    .footer-info-left p{
+        padding-bottom: 28px;
+        font-size: 0.8em;
+    }
+
+    .social{
+        text-align: right;
+        margin: 49px 36px 20px 30px;
+    }
+
+    .social p{
+        padding-bottom: 19px;
+        padding: 0 15px 28px 0;
+    }
+
+    .social img{
+        padding-bottom: 18px;
+        padding: 0 10px 0 0;
+    }
+}
+
+
+/* ABOUT, MISSION, SERVE, DONATE PAGES CONTENT SECTION----------------------------------------------*/
+
+/* content wrappers */
+.about-content-wrapper, .mission-content-wrapper,
+.serve-content-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 50px 100px;
+}
+
+/* h1 */
+.about-content-wrapper h1, .mission-content-wrapper h1,
+.serve-content-wrapper h1, .donate-content-wrapper h1,
+.contact-content-wrapper h1{
+    font-size: 1.3em;
+    line-height: 25px;
+    margin-bottom: 10px;
+}
+
+/* h2 */
+.mission-content-wrapper h2,
+.serve-content-wrapper h2,
+.donate-content-wrapper h2,
+.contact-content-wrapper h2{
+    font-weight: bold;
+    text-decoration: underline;
+    padding-bottom: 5px;
+    line-height: 20px;
+}
+
+/* about img */
+.about-content-wrapper img{
+    width: 100%;
+}
+
+/* center circle graphic */
+.mission-content-wrapper div:nth-child(4){
+    margin: 20px auto;
+}
+
+/* content divs */
+.about-content-wrapper div:nth-child(2),
+.mission-content-wrapper div:nth-child(2),
+.mission-content-wrapper div:nth-child(3),
+.donate-content-wrapper div:nth-child(2){
+    margin-top: 20px;
+}
+
+/* paragraphs */
+.about-content-wrapper p, .mission-content-wrapper p,
+.serve-content-wrapper p, .donate-content-wrapper p{
+    line-height: 20px;
+    padding-bottom: 10px;
+}
+
+/* when the screen is a tablet or mobile use this margin */
+@media screen and (max-width: 768px) {
+    /* mobile content wrapper */
+    .about-content-wrapper, .mission-content-wrapper,
+    .serve-content-wrapper{
+         margin: 30px;
+    }
+}
+
+
+/* VOLUNTEER DONATE AND CONTACT PAGE FORMs ---------------------------------------------------*/
+
+/* volunteer form container wrapper */
+.volunteer-content-wrapper div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 320px;
+    margin: auto;
+}
+
+/* form input boxes */
+.volunteer-content-wrapper div input,
+.donate-content-wrapper div input,
+.contact-content-wrapper div input{
+    font-size: 1em;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+/* submit button */
+.volunteer-content-wrapper div.submit-btn,
+.contact-content-wrapper div.submit-btn{
+    padding: 10px;
+    border: 3px solid #666965;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* hover submit button bkg color*/
+.volunteer-content-wrapper div.submit-btn:hover,
+.contact-content-wrapper div.submit-btn:hover{
+    background-color: #8dc440;
+}
+
+/* hover submit button text color */
+.volunteer-content-wrapper div.submit-btn a:hover,
+.contact-content-wrapper div.submit-btn a:hover{
+    color: #fff;
+}
+
+/* DONATE CONTENT FORM -----------------------------------------------------*/
+
+
+.donate-button-hide{
+    visibility: hidden;
+}
+
+/* green background color */
+.form-bkg-color{
+    background-color: #8dc440;
+    padding: 30px;
+}
+
+/* white text color */
+.donate-content-wrapper form, .donate-form h1,
+.donate-content-wrapper .submit-btn a{
+    color: #fff;
+}
+
+/* all divs column direction */
+.donate-content-wrapper div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 540px;
+    margin: auto;
+}
+
+/* first div margin spacing */
+div.donate-text-input-row:first-child{
+   margin-bottom: -28px;
+}
+
+/* input row width 100% */
+.donate-content-wrapper form .donate-text-input-row input,
+.donate-content-wrapper select{
+    width: 100%;
+}
+
+/* selection font size, height and margin */
+.donate-content-wrapper select{
+    margin-bottom: 8px;
+    height: 42px;
+    margin-right: 5px;
+    font-size: 1em;
+    color: gray;
+}
+
+/* paragraph margin spacing*/
+.donate-content-wrapper form p.amount,
+.donate-content-wrapper form p.billing,
+.donate-content-wrapper form p.expiration{
+    margin-top: 10px;
+}
+
+/* make radio buttons sit next to e/o */
+.donate-content-wrapper .donate-form div{
+    flex-direction: row;
+}
+
+/* space between labels and inputs */
+.donate-content-wrapper .donate-form div label{
+    padding-right: 22px;
+}
+
+/* align inputs with labels */
+.donate-content-wrapper .donate-form div input{
+    margin-top: -2px;
+}
+
+/* show other amount box when clicked */
+.show {
+  display: inherit !important;
+  width: 80px;
+  float: right;
+}
+
+/*security code */
+#securitycode{
+    margin-top: 2px;
+}
+
+/* submit btn*/
+.donate-content-wrapper div.submit-btn{
+    padding: 10px;
+    border: 3px solid #fff;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+/* submit btn hover */
+.donate-content-wrapper div.submit-btn:hover{
+    background: #666965;
+}
+
+/* when the screen is a tablet or mobile use this width */
+@media screen and (max-width: 768px) {
+
+    .donate-content-wrapper div{
+        width: 330px;
+        font-size: 0.9em;
+    }
+
+    /* space between labels and inputs */
+    .donate-content-wrapper .donate-form div label{
+        padding-right: 8px;
+    }
+
+    /* show other amount box when clicked */
+    .show {
+      width: 70px;
+    }
+}
+
+
+/* CONTACT PAGE CONTENT -----------------------------------*/
+
+.contact-content-wrapper .emails{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 320px;
+    margin: auto;
+    font-size: 0.9em;
+}
+
+.contact-content-wrapper .numbers-addresses{
+    border-top: 2px solid #8dc440;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 720px;
+    font-size: 0.8em;
+    margin: 15px auto;
+}
+
+.contact-content-wrapper .numbers-addresses p{
+    padding: 5px 0;
+}
+
+/* space between contact divs */
+.contact-content-wrapper div{
+    padding: 10px 10px;
+}
+
+/* align center*/
+.contact-content-wrapper, .contact-content-wrapper h2,
+.contact-content-wrapper p{
+    text-align: center;
+}
+
+/* when the screen is a tablet or mobile stack */
+@media screen and (max-width: 768px) {
+    .contact-content-wrapper .emails{
+        border-bottom: 2px solid #8dc440;
+        font-size: 1em;
+    } 
+
+    .contact-content-wrapper .numbers-addresses {
+        flex-direction: column;
+        width: auto;
+        border-top: none;
+        font-size: 1em;
+    }
+}
 
 
