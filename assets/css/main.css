@@ -350,7 +350,7 @@ a {
     justify-content: center;
     display: flex;
     max-width: 30px auto;
-    margin: -30px 0 20px 0; }
+    margin: 30px 0 20px 0; }
   .logo-desktop img {
     z-index: 2; }
   .logo-mobile, .g-mobile, .about-mobile, .mission-mobile, .volunteer-mobile,
@@ -375,20 +375,22 @@ a {
   #slider figure {
     width: 500%; } }
 
-/* BIBLE QUOTE-------------------------------------------*/
+/* QUOTE-------------------------------------------*/
 .quote {
   margin: 30px;
   text-align: center;
   line-height: 35px;
-  font-style: italic;
+  letter-spacing: 0.1em;
   font-size: 1em;
-  font-family: 'Calligraffitti', cursive;
-  color: gray; }
+  white-space: nowrap;
+  color: gray;
+  padding-bottom: 10%; }
 
 /* when the screen is bigger than tablet increase font size */
 @media screen and (min-width: 769px) {
   .quote {
-    font-size: 1.25em; } }
+    font-size: 1.25em;
+    letter-spacing: 0.3em; } }
 
 /* TABS ---------------------------------------------------*/
 .tabs {
@@ -451,10 +453,12 @@ a {
 
 /* tab content container */
 .tab_container {
-  border-bottom: 1px solid #fff;
   width: 100%;
   background: #8dc440;
   overflow: hidden; }
+  @media screen and (max-width: 480px) {
+    .tab_container {
+      border-bottom: 2px solid #666965; } }
 
 /* tab content */
 .tab_content {
@@ -463,6 +467,12 @@ a {
   display: none;
   /* hide content unless clicked active*/
   /* tab h2 */ }
+  @media screen and (max-width: 767px) {
+    .tab_content {
+      padding: 10% 0; } }
+  @media screen and (min-width: 768px) {
+    .tab_content {
+      padding: 4% 0; } }
   .tab_content h2 {
     padding-top: 120px;
     font-size: 2em;
@@ -470,7 +480,12 @@ a {
 
 /* tab p */
 .tab_content p {
-  padding-bottom: 15px; }
+  padding-bottom: 15px;
+  line-height: 1.4em; }
+  @media screen and (max-width: 480px) {
+    .tab_content p {
+      max-width: 68%;
+      margin: 0 auto; } }
   .tab_content p em {
     font-style: italic;
     color: gray; }
@@ -499,10 +514,15 @@ a {
   .button-tabs h1 {
     color: #fff;
     padding: 15px 0; }
+    .button-tabs h1:hover {
+      color: #666965; }
 
 /* hover button*/
 .tab_content .button-tabs:hover {
   background-color: #666965; }
+  @media screen and (min-width: 481px) {
+    .tab_content .button-tabs:hover {
+      background-color: #fff; } }
 
 /* shop etsy img desktop*/
 #tab3 img {
@@ -528,6 +548,9 @@ a {
   border-bottom: 3px solid #fff;
   margin-top: 50px;
   width: 300px; }
+  @media screen and (min-width: 481px) {
+    #tab4 input[type=text]::placeholder {
+      color: #fff; } }
 
 /* subscribe and volunteer input text color */
 #tab4 input, #tab2 input {
@@ -536,11 +559,14 @@ a {
 
 /* input volunteer  */
 #tab2 input[type=text] {
-  margin-top: 9px;
+  margin-top: 14px;
   background: transparent;
   border: none;
   border-bottom: 2px solid #fff;
   width: 300px; }
+  @media screen and (min-width: 481px) {
+    #tab2 input[type=text]::placeholder {
+      color: #fff; } }
 
 /* when mobile, stack tabs up and down, hide left to right*/
 @media screen and (max-width: 480px) {
@@ -576,13 +602,14 @@ a {
   /* donate button h1 */
   .button-tabs h1 {
     border: 3px solid #666965;
-    color: #666965; }
+    color: #666965;
+    transition: .4s ease-in-out; }
   /* donate $$$ amounts label position */
   .tab_content div.amounts label {
     padding-right: 8px; }
   /* hover donate btn */
   .tab_content .button-tabs h1:hover {
-    background-color: #8dc440;
+    background-color: #666965;
     color: #fff; }
   /* shop etsy img */
   #tab3 img {
@@ -598,9 +625,12 @@ a {
 
 /* FOOTER--------------------------------------------------*/
 .footer {
-  background-color: #666965;
+  background-color: #fff;
   color: #bcbcbc;
   display: flex; }
+  @media screen and (max-width: 480px) {
+    .footer {
+      margin-top: 10%; } }
 
 /* when the screen is a tablet or mobile use this footer style */
 @media screen and (max-width: 768px) {
@@ -620,7 +650,9 @@ a {
     .social p {
       padding-bottom: 10px; }
     .social img {
-      padding: 0 6px 0 0; } }
+      padding: 0 6px 0 0; }
+      .social img:hover {
+        border-bottom: 2px solid #8dc440; } }
 
 /* when the screen is bigger than tablet use this footer style */
 @media screen and (min-width: 769px) {
@@ -640,7 +672,9 @@ a {
       padding: 0 15px 28px 0; }
     .social img {
       padding-bottom: 18px;
-      padding: 0 10px 0 0; } }
+      padding: 0 10px 0 0; }
+      .social img:hover {
+        border-bottom: 2px solid #8dc440; } }
 
 /* ABOUT, MISSION, SERVE, DONATE PAGES CONTENT SECTION----------------------------------------------*/
 /* content wrappers */
@@ -688,8 +722,8 @@ a {
 /* paragraphs */
 .about-content-wrapper p, .mission-content-wrapper p,
 .serve-content-wrapper p, .donate-content-wrapper p {
-  line-height: 20px;
-  padding-bottom: 10px; }
+  line-height: 1.7em;
+  padding-bottom: 50px; }
 
 /* when the screen is a tablet or mobile use this margin */
 @media screen and (max-width: 768px) {
@@ -715,16 +749,27 @@ a {
   padding: 10px;
   margin-bottom: 15px; }
 
+.donate-content-wrapper div input {
+  border: none; }
+
 /* submit button */
-.volunteer-content-wrapper div.submit-btn,
 .contact-content-wrapper div.submit-btn {
   padding: 10px;
   border: 3px solid #666965;
   text-align: center;
   margin-bottom: 40px; }
 
+.volunteer-content-wrapper div.submit-btn {
+  background-color: #8dc440;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 40px; }
+  .volunteer-content-wrapper div.submit-btn a {
+    color: #fff; }
+  .volunteer-content-wrapper div.submit-btn:hover {
+    background-color: #666965; }
+
 /* hover submit button bkg color*/
-.volunteer-content-wrapper div.submit-btn:hover,
 .contact-content-wrapper div.submit-btn:hover {
   background-color: #8dc440; }
 
@@ -808,7 +853,9 @@ div.donate-text-input-row:first-child {
   margin-bottom: 40px;
   margin-top: 20px; }
   .donate-content-wrapper div.submit-btn:hover {
-    background: #666965; }
+    background-color: #fff; }
+    .donate-content-wrapper div.submit-btn:hover a {
+      color: #666965; }
 
 /* when the screen is a tablet or mobile use this width */
 @media screen and (max-width: 768px) {

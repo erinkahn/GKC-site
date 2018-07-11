@@ -412,7 +412,7 @@ a {
         justify-content: center;
         display: flex;
         max-width: 30px auto;
-        margin: -30px 0 20px 0;
+        margin: 30px 0 20px 0;
     }
 
     .logo-desktop img{
@@ -457,22 +457,24 @@ a {
 
 }
 
-/* BIBLE QUOTE-------------------------------------------*/
+/* QUOTE-------------------------------------------*/
 
 .quote {
     margin: 30px;
     text-align: center;
     line-height: 35px;
-    font-style: italic;
+    letter-spacing: 0.1em;
     font-size: 1em;
-    font-family: 'Calligraffitti', cursive;
+    white-space: nowrap;
     color: gray;
+    padding-bottom: 10%;
 }
 
 /* when the screen is bigger than tablet increase font size */
 @media screen and (min-width: 769px) {
     .quote{
         font-size: 1.25em;
+        letter-spacing: 0.3em;
     }
 }
 
@@ -557,10 +559,12 @@ a {
 
 /* tab content container */
 .tab_container {
-    border-bottom: 1px solid #fff;
     width: 100%;
     background: #8dc440;
     overflow: hidden;
+    @media screen and (max-width: 480px){
+        border-bottom: 2px solid #666965;
+    }
 }
 
 
@@ -569,6 +573,14 @@ a {
     text-align: center;
     color: #fff;
     display: none; /* hide content unless clicked active*/
+
+    @media screen and (max-width: 767px){
+        padding: 10% 0;
+    }
+    @media screen and (min-width: 768px){
+        padding: 4% 0;
+    }
+
 
     /* tab h2 */
     h2{
@@ -582,6 +594,11 @@ a {
 /* tab p */
 .tab_content p{
     padding-bottom: 15px;
+    line-height: 1.4em;
+    @media screen and (max-width: 480px){
+        max-width: 68%;
+        margin: 0 auto;
+    }
 
     em{
         font-style: italic;
@@ -621,6 +638,9 @@ a {
     h1{
         color: #fff;
         padding: 15px 0;
+        &:hover{
+            color: #666965;
+        }
     }
 }
 
@@ -629,6 +649,9 @@ a {
 /* hover button*/
 .tab_content .button-tabs:hover{
     background-color: #666965;
+    @media screen and (min-width: 481px){
+        background-color: #fff;
+    }
 }
 
 /* shop etsy img desktop*/
@@ -658,6 +681,11 @@ a {
     border-bottom: 3px solid #fff;
     margin-top: 50px;
     width: 300px;
+    &::placeholder{
+        @media screen and (min-width: 481px){
+            color: #fff;
+        }
+    }
 }
 
  /* subscribe and volunteer input text color */
@@ -668,11 +696,16 @@ a {
 
 /* input volunteer  */
 #tab2 input[type=text] {
-    margin-top: 9px;
+    margin-top: 14px;
     background: transparent;
     border: none;
     border-bottom: 2px solid #fff;
     width: 300px;
+    &::placeholder{
+        @media screen and (min-width: 481px){
+            color: #fff;
+        }
+    }
 }
 
 /* when mobile, stack tabs up and down, hide left to right*/
@@ -721,6 +754,7 @@ a {
     .button-tabs h1{
         border: 3px solid #666965;
         color: #666965;
+        transition: .4s ease-in-out;
     }
 
     /* donate $$$ amounts label position */
@@ -730,7 +764,7 @@ a {
 
     /* hover donate btn */
     .tab_content .button-tabs h1:hover{
-        background-color: #8dc440;
+        background-color: #666965;
         color: #fff;
     }
 
@@ -757,7 +791,11 @@ a {
 /* FOOTER--------------------------------------------------*/
 
 .footer{
-        background-color: #666965;
+    @media screen and (max-width: 480px){
+      
+        margin-top: 10%;
+    }
+        background-color: #fff;
         color: #bcbcbc;
         display: flex;
 
@@ -792,7 +830,11 @@ a {
 
         img{
             padding: 0 6px 0 0;
+            &:hover{
+                border-bottom: 2px solid #8dc440;
+            }
         }
+
     }
 
 }
@@ -827,6 +869,9 @@ a {
         img{
             padding-bottom: 18px;
             padding: 0 10px 0 0;
+            &:hover{
+                border-bottom: 2px solid #8dc440;
+            }
         }
     
     }
@@ -887,8 +932,8 @@ a {
 /* paragraphs */
 .about-content-wrapper p, .mission-content-wrapper p,
 .serve-content-wrapper p, .donate-content-wrapper p{
-    line-height: 20px;
-    padding-bottom: 10px;
+    line-height: 1.7em;
+    padding-bottom: 50px;
 }
 
 /* when the screen is a tablet or mobile use this margin */
@@ -899,6 +944,7 @@ a {
          margin: 30px;
     }
 }
+
 
 
 /* VOLUNTEER DONATE AND CONTACT PAGE FORMs ---------------------------------------------------*/
@@ -921,8 +967,11 @@ a {
     margin-bottom: 15px;
 }
 
+.donate-content-wrapper div input{
+    border: none;
+}
+
 /* submit button */
-.volunteer-content-wrapper div.submit-btn,
 .contact-content-wrapper div.submit-btn{
     padding: 10px;
     border: 3px solid #666965;
@@ -930,8 +979,23 @@ a {
     margin-bottom: 40px;
 }
 
+.volunteer-content-wrapper div.submit-btn{
+    background-color: #8dc440;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 40px;
+
+    a{
+        color: #fff;
+    }
+
+    &:hover{
+        background-color: #666965;
+    
+    }
+}
+
 /* hover submit button bkg color*/
-.volunteer-content-wrapper div.submit-btn:hover,
 .contact-content-wrapper div.submit-btn:hover{
     background-color: #8dc440;
 }
@@ -1033,7 +1097,11 @@ div.donate-text-input-row:first-child{
     margin-top: 20px;
 
     &:hover{
-        background: #666965;
+        background-color: #fff;
+       
+        a{
+            color: #666965;
+        }
     }
 }
 
